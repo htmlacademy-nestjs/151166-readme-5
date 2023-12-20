@@ -34,6 +34,7 @@ export class BlogUserEntity implements AuthUser, Entity<string> {
     this.lastname = data.lastname;
     this.dateOfBirth = data.dateOfBirth;
     this.role = data.role;
+    this.passwordHash = data.passwordHash;
   }
 
   // Реализуем в классе `BlogUserEntity` метод для выполнения хеширования.
@@ -46,6 +47,10 @@ export class BlogUserEntity implements AuthUser, Entity<string> {
 //проверки пароля пользователя
   public async comparePassword(password: string): Promise<boolean> {
     return compare(password, this.passwordHash);
+  }
+
+  static fromObject(data: AuthUser): BlogUserEntity {
+    return new BlogUserEntity(data);
   }
 
 }
