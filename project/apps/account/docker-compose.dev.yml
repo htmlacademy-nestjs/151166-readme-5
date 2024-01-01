@@ -11,9 +11,9 @@ services:
       MONGO_INITDB_DATABASE: typoteka-account
 
     ports:
-      - 27017:27017
+      - 27018:27017
 
-    volumes:
+    volumes:hit
       - typoteka.mongo.account:/data/db
 
     healthcheck:
