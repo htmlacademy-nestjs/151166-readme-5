@@ -3,7 +3,7 @@ POST http://localhost:3000/api/auth/register HTTP/1.1
 Content-Type: application/json
 
 {
-  "email": "user@notfound.local",
+  "email": "user@notfound2.local",
   "dateBirth": "2012-02-22",
   "firstname": "Keks",
   "lastname": "Smith",
@@ -13,7 +13,8 @@ Content-Type: application/json
 ###
 
 # Get user by ID
-GET http://localhost:3000/api/auth/658c6c3fbdaf5347f1ffaa1a HTTP/1.1
+GET http://localhost:3000/api/auth/659aba1f1159c02ec026d3f3 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAbm90Zm91bmQyLmxvY2FsIiwicm9sZSI6InVzZXIiLCJsYXN0bmFtZSI6IlNtaXRoIiwiZmlyc3RuYW1lIjoiS2VrcyIsImlhdCI6MTcwNDYzOTEyMiwiZXhwIjoxNzA0NjM5NTU0fQ.Beiw3R3y9udaGODxDMxTp5FXL4Pf5Z9g9gf4hrf27Pw
 
 ###
 
@@ -22,8 +23,13 @@ POST http://localhost:3000/api/auth/login HTTP/1.1
 Content-Type: application/json
 
 {
-  "email": "user@notfound.local",
+  "email": "user@notfound2.local",
   "password": "123456"
 }
+
+###
+
+# Demo route for Pipe
+GET http://localhost:3000/api/auth/demo/1 HTTP/1.1
 
 ###
