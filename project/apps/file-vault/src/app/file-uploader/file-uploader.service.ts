@@ -43,7 +43,6 @@ export class FileUploaderService {
       const uploadDirectoryPath = this.getUploadDirectoryPath();
       const subDirectory = this.getSubUploadDirectoryPath();
       const fileExtension = extension(file.mimetype);
-      console.log(file.mimetype)
       const filename = `${randomUUID()}.${fileExtension}`;
 
       const path = this.getDestinationFilePath(filename);
