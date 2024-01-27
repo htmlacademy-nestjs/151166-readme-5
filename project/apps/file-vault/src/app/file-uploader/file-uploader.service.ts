@@ -7,7 +7,6 @@ import { join } from 'node:path';
 import dayjs from 'dayjs';
 import { randomUUID } from 'node:crypto';
 import { extension } from 'mime-types';
-import { fileTypeFromFile } from 'file-type';
 
 import { FileVaultConfig } from '@project/shared/config/file-vault';
 import { FileRepository } from './file.repository';
@@ -43,7 +42,6 @@ export class FileUploaderService {
       const uploadDirectoryPath = this.getUploadDirectoryPath();
       const subDirectory = this.getSubUploadDirectoryPath();
       const fileExtension = extension(file.mimetype);
-      console.log(file.mimetype)
       const filename = `${randomUUID()}.${fileExtension}`;
 
       const path = this.getDestinationFilePath(filename);

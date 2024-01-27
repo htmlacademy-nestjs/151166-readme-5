@@ -17,7 +17,7 @@ async function bootstrap() {
     .setVersion('1.0')
     .build();
 
-  const globalPrefix = process.env.GLOBAL_PREFIX || 'api';
+  const globalPrefix = 'api';
   app.setGlobalPrefix(globalPrefix);
 
   const document = SwaggerModule.createDocument(app, config);
@@ -25,7 +25,7 @@ async function bootstrap() {
 
   app.useGlobalPipes(new ValidationPipe({ transform: true }));
 
-  const port = process.env.DEFAULT_PORT || 3002;
+  const port = process.env.PORT || 3000;
   await app.listen(port);
 
   Logger.log(

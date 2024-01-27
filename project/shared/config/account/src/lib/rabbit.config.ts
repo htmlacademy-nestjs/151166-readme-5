@@ -29,7 +29,6 @@ function validateConfig(config: RabbitConfig): void {
 }
 
 function getConfig(): RabbitConfig {
-  console.log(process.env.RABBIT_USER)
   const config: RabbitConfig = {
     host: process.env.RABBIT_HOST,
     password: process.env.RABBIT_PASSWORD,
@@ -38,7 +37,6 @@ function getConfig(): RabbitConfig {
     queue: process.env.RABBIT_QUEUE,
     exchange: process.env.RABBIT_EXCHANGE,
   };
-
 
   validateConfig(config);
   return config;
