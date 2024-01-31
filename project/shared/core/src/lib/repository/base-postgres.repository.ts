@@ -1,7 +1,7 @@
-import { PrismaClientService } from '@project/shared/blog/models';
+import {PrismaClientService} from '@project/shared/blog/models';
 
-import { DefaultPojoType, Entity, EntityIdType } from './entity.interface';
-import { Repository } from './repository.interface';
+import {DefaultPojoType, Entity, EntityIdType} from './entity.interface';
+import {Repository} from './repository.interface';
 
 export abstract class BasePostgresRepository<
   EntityType extends Entity<EntityIdType, DocumentType>,
@@ -11,10 +11,11 @@ export abstract class BasePostgresRepository<
   constructor(
     protected readonly client: PrismaClientService,
     private readonly createEntity: (document: DocumentType) => EntityType,
-  ) {}
+  ) {
+  }
 
   protected createEntityFromDocument(document: DocumentType): EntityType | null {
-    if (! document) {
+    if (!document) {
       return null;
     }
 

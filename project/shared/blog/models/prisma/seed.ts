@@ -1,4 +1,4 @@
-import { PrismaClient } from '@prisma/client';
+import {PrismaClient} from '@prisma/client';
 
 const FIRST_CATEGORY_UUID = '39614113-7ad5-45b6-8093-06455437e1e2';
 const SECOND_CATEGORY_UUID = 'efd775e2-df55-4e0e-a308-58249f5ea202';
@@ -11,8 +11,8 @@ const SECOND_USER_ID = '6581762309c030b503e30512';
 
 function getCategories() {
   return [
-    { id: FIRST_CATEGORY_UUID, title: 'Книги' },
-    { id: SECOND_CATEGORY_UUID, title: 'Компьютеры' },
+    {id: FIRST_CATEGORY_UUID, title: 'Книги'},
+    {id: SECOND_CATEGORY_UUID, title: 'Компьютеры'},
   ];
 }
 
@@ -25,7 +25,7 @@ function getPosts() {
       content: 'Недавно прочитал страшный роман «Худеющий».',
       description: 'На мой взгляд, это один из самых страшных романов Стивена Кинга.',
       categories: {
-        connect: [{ id: FIRST_CATEGORY_UUID }],
+        connect: [{id: FIRST_CATEGORY_UUID}],
       },
     },
     {
@@ -36,8 +36,8 @@ function getPosts() {
       description: 'Секреты и тайные знания по JavaScript.',
       categories: {
         connect: [
-          { id: FIRST_CATEGORY_UUID },
-          { id: SECOND_CATEGORY_UUID },
+          {id: FIRST_CATEGORY_UUID},
+          {id: SECOND_CATEGORY_UUID},
         ]
       },
       comments: [
@@ -58,7 +58,7 @@ async function seedDb(prismaClient: PrismaClient) {
   const mockCategories = getCategories();
   for (const category of mockCategories) {
     await prismaClient.category.upsert({
-      where: { id: category.id },
+      where: {id: category.id},
       update: {},
       create: {
         id: category.id,

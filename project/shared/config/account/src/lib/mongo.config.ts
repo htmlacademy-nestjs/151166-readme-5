@@ -1,7 +1,7 @@
-import { plainToClass } from 'class-transformer';
-import { registerAs, ConfigType } from '@nestjs/config';
-import { MongoConfiguration } from './mongodb/mongo.env';
-import { DEFAULT_MONGO_PORT } from './mongodb/mongo.const';
+import {plainToClass} from 'class-transformer';
+import {ConfigType, registerAs} from '@nestjs/config';
+import {MongoConfiguration} from './mongodb/mongo.env';
+import {DEFAULT_MONGO_PORT} from './mongodb/mongo.const';
 
 export interface MongoConfig {
   host: string;
