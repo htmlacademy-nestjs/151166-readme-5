@@ -1,4 +1,4 @@
-import { ClassTransformOptions, plainToInstance } from 'class-transformer';
+import {ClassTransformOptions, plainToInstance} from 'class-transformer';
 
 export function fillDto<T, V>(
   DtoClass: new () => T,
